@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}SaaS App{% endblock %}</title>
+    <!-- Add static CSS/JS includes here if needed -->
+</head>
+<body>
+    <header>
+        <h1>SaaS App</h1>
+        <!-- Navigation can go here -->
+    </header>
+    <main>
+        <div class="welcome-message">
+            <h2>
+                {% if user.is_authenticated %}
+                    Welcome, {{ user.username }}!
+                {% else %}
+                    Welcome to our SaaS Application!
+                {% endif %}
+            </h2>
+            <p>Thank you for visiting. We're excited to have you here.</p>
+        </div>
+        {% block content %}
+        <!-- Page content goes here -->
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 SaaS App</p>
+    </footer>
+</body>
+</html>
