@@ -1,0 +1,16 @@
+name: Docker Image CI
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: |
+        TIMESTAMP=$(date +%s)
+        docker build . --file Dockerfile --tag saas_app:$TIMESTAMP
+        docker run -p 8000:8000 saas_app:$TIMESTAMP
