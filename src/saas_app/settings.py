@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'sass_app.urls'
+ROOT_URLCONF = 'saas_app.urls'
 
 TEMPLATES = [
     {
