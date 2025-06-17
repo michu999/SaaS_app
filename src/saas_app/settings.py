@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'sass_app.wsgi.application'
+WSGI_APPLICATION = 'saas_app.wsgi.application'
 
 
 # Database
